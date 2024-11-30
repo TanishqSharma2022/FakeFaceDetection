@@ -15,8 +15,8 @@ class CustomDatasetLoader:
         self.image_size = image_size
         
         # Get paths for real and fake images
-        self.real_dir = os.path.join(dataset_dir, 'real')
-        self.fake_dir = os.path.join(dataset_dir, 'fake')
+        self.real_dir = os.path.join(dataset_dir, 'ben')
+        self.fake_dir = os.path.join(dataset_dir, 'mal')
         
         # Get all image files
         self.real_files = self._get_image_files(self.real_dir)
@@ -68,7 +68,8 @@ class CustomDatasetLoader:
         mean = np.mean(image, axis=(0, 1), keepdims=True)
         contrast = np.clip((image - mean) * np.random.uniform(0.8, 1.2) + mean, 0, 1)
         augmented_images.append(contrast)
-        
+
+
         return augmented_images
     
     def load_dataset(self, with_augmentation=False):

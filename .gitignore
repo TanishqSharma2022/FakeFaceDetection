@@ -1,2 +1,7 @@
 dataset
 myenv
+CNN_dataset
+RF
+SVM
+vgg16_custom_model.pth
+__pycache__
